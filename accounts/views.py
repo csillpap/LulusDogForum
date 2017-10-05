@@ -7,6 +7,10 @@ from django.template.context_processors import csrf
 from accounts.forms import UserRegistrationForm
 
 
+def profile(request):
+    return render(request, 'profile.html')
+
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
