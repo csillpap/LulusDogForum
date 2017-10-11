@@ -49,6 +49,7 @@ def register(request):
                                      password=request.POST.get('password1'))
 
             if user:
+                auth.login(request, user)
                 messages.success(request, "You have successfully registered and are now logged into your account")
                 return redirect(reverse('profile'))
 
