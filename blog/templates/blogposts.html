@@ -1,0 +1,11 @@
+{% extends "blog.html" %}
+{% block blogcontent %}
+    {% for post in posts %}
+        <div>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.content|truncatewords:50 }}</p>
+            <p><button class="btn btn-default" onclick="location.href={{ post.id }}">Read More</button></p>
+            <p>{{ post.published_date }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

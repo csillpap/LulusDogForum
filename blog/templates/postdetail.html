@@ -1,0 +1,9 @@
+{% extends "blog.html" %}
+{% block blogcontent %}
+    <div>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.content }}</p>
+        <p><button class="btn btn-default" onclick="location.href='blogposts'">Go Back to Blog</button></p>
+        <p>{{ post.published_date }} | Views {{ post.views }}</p>
+    </div>
+{% endblock %}
