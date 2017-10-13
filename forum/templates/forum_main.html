@@ -1,0 +1,10 @@
+{% extends "forum.html" %}
+{% load thread_extras %}
+{% block forumcontent %}
+   {% load bootstrap_tags %}
+       {% for thread in threads %}
+           {% include "thread_item.html" %}
+           <h3>{{ thread.subject }}</h3>
+       {% endfor %}
+       <div><h4><a href="{% url 'forum_subjects' %}">Search threads by subject</a></h4></div>
+{% endblock %}

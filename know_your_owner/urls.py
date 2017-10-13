@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^$', home_views.get_homepage, name='home'),
     url(r'^account/', include('accounts.urls')),
     url(r'^blog/', include('blog.urls')),
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}), # media urls for the blog images
+    url(r'^forum/', include('forum.urls')),
 ]
