@@ -18,6 +18,9 @@ from django.contrib import admin
 from home import views as home_views
 from django.views.static import serve
 from settings import MEDIA_ROOT
+from paypal.standard.ipn import urls as paypal_urls
+from paypal_store.views import paypal_return, paypal_cancel
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,6 +29,9 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}), # media urls for the blog images
     url(r'^forum/', include('forum.urls')),
-    url(r'^paypal/', include('paypal_store.urls')),
     url(r'^products/', include('products.urls')),
+    # paypal urls
+    url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
+    url(r'^paypal-return$', paypal_return),
+    url(r'^paypal-cancel$', paypal_cancel),
 ]
