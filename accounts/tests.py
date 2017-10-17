@@ -3,7 +3,9 @@ from __future__ import unicode_literals
 from django.test import TestCase
 from views import profile, login, logout, register
 from django.core.urlresolvers import resolve
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response
+from forms import UserRegistrationForm, UserLoginForm
+from django import forms
 
 
 # Testing the views
@@ -74,3 +76,52 @@ class LogoutViewTest(TestCase):
         self.assertRedirects(response, "/")
 
 
+# Testing forms
+
+class CustomUserTest(TestCase):
+
+    # Registration form tests
+
+    def test_registration_form(self):
+        form = UserRegistrationForm({
+            'username': 'Tester',
+            'email': 'test@test.com',
+            'password1': 'testing1',
+            'password2': 'testing1'
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_registration_form_fails_with_missing_email(self):
+        form = UserRegistrationForm({
+            'username': 'Tester',
+            'password1': 'testing1',
+            'password2': 'testing1'
+        })
+
+        self.assertFalse(form.is_valid())
+        self.assertRaisesMessage(forms.ValidationError,
+                                 "Please enter your email address",
+                                 form.full_clean())
+
+    def test_registration_form_fails_wih_passwords_that_dont_match(self):
+        form = UserRegistrationForm({
+            'username': 'Tester',
+            'email': 'test@test.com',
+            'password1': 'testing1',
+            'password2': 'testing2'
+        })
+        self.assertFalse(form.is_valid())
+        self.assertRaisesMessage(forms.ValidationError,
+                                 "Passwords do not match",
+                                 form.full_clean())
+
+    # Login form tests
+
+    def test_login_form(self):
+        form = UserLoginForm({
+            'username': 'Tester',
+            'password': 'testing1'
+        })
+
+        self.assertTrue(form.is_valid())
