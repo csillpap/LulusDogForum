@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}), # media urls for the blog images
     url(r'^forum/', include('forum.urls')),
     url(r'^paypal/', include('paypal_store.urls')),
+    url(r'^products/', include('products.urls')),
 ]
