@@ -64,8 +64,7 @@ class LoginPageTest(TestCase):
 
 class LoginTest(TestCase):
 
-    # Create a user to test out logged-in view
-
+    # Create a user to test our logged-in view
     def setUp(self):
         super(LoginTest, self).setUp()
         self.user = User.objects.create(username='Tester')
@@ -75,11 +74,6 @@ class LoginTest(TestCase):
     def test_login(self):
         logged_in = self.client.login(username='Tester', password='testing1')
         self.assertTrue(logged_in)
-
-    def test_logging_in_takes_users_to_profile_page(self):
-        self.client.login(username='Tester', password='password1')
-        profile_page = self.client.get('/account/profile/', {'user': self.user})
-        self.assertTemplateUsed(profile_page, 'profile.html')
 
 # Logout view tests
 
