@@ -6,6 +6,7 @@ from django.core.urlresolvers import resolve
 from django.shortcuts import render_to_response
 from forms import UserRegistrationForm, UserLoginForm
 from django import forms
+from django.contrib.auth.models import User
 
 
 # Testing the views
@@ -59,6 +60,26 @@ class LoginPageTest(TestCase):
         login_page = self.client.get('/account/login/')
         self.assertTemplateUsed(login_page, "login.html")
 
+# Logged-in view tests
+
+class LoginTest(TestCase):
+
+    # Create a user to test out logged-in view
+
+    def setUp(self):
+        super(LoginTest, self).setUp()
+        self.user = User.objects.create(username='Tester')
+        self.user.set_password('testing1')
+        self.user.save()
+
+    def test_login(self):
+        logged_in = self.client.login(username='Tester', password='testing1')
+        self.assertTrue(logged_in)
+
+    def test_logging_in_takes_users_to_profile_page(self):
+        self.client.login(username='Tester', password='password1')
+        profile_page = self.client.get('/account/profile/', {'user': self.user})
+        self.assertTemplateUsed(profile_page, 'profile.html')
 
 # Logout view tests
 
