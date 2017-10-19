@@ -86,6 +86,11 @@ a.navbar-brand {
 
 /* Blog and forum page */
 
+.page-title {
+    border-bottom: #663300 solid 3px;
+    padding-bottom: 25px;
+}
+
 h2 > a {
     color: #663300;
 }
@@ -98,6 +103,23 @@ h2 > a:hover {
 
 .post-container {
     border-bottom: #663300 solid 2px;
+}
+
+/* Products */
+
+thead {
+    border-bottom: #663300 solid 3px;
+    padding-bottom: 25px;
+}
+
+tr {
+    background-color: #FFFACD;
+    border-bottom: #663300 solid 2px
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #FFFACD;
+    border-bottom: #663300 solid 2px
 }
 
 @media (max-width: 575px) {
