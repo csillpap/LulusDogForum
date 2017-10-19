@@ -49,6 +49,10 @@ a.navbar-brand {
     background-color: #FFFACD;
 }
 
+.account-forms-container {
+    padding-top: 50px;
+}
+
 .btn-default {
     color: white;
     font-family: "Walter Turncoat", cursive, sans-serif;
@@ -68,10 +72,11 @@ a.navbar-brand {
 .btn-primary:hover {
     background-color: #FF8C00;
     border-color: #663300;
+    color: white;
 }
 
 .btn.btn-default > a:hover {
-    color: #333;
+    color: white;
     text-decoration: none;
 }
 
@@ -79,6 +84,12 @@ a.navbar-brand {
 .btn.btn-default > a {
     color: white;
     text-decoration: none;
+}
+
+.alert-success {
+    color: black;
+    background-color: #FF8C00;
+    border-color: #FF8C00;
 }
 
 /* Home page */
