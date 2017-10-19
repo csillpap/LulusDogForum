@@ -43,17 +43,25 @@ a.navbar-brand {
     width: 100%;
 }
 
-/* Forms */
+/* Forms and buttons */
 
 .form-control {
     background-color: #FFFACD;
 }
 
-.btn-primary {
+.btn-default {
+    color: white;
+    font-family: "Walter Turncoat", cursive, sans-serif;
+}
+
+.btn-primary,
+.btn-default {
     background-color: #663300;
     border-color: #FF8C00;
 }
 
+.btn-default:focus,
+.btn-default:hover,
 .btn-primary:focus,
 .btn-primary:hover {
     background-color: #FF8C00;
@@ -76,6 +84,22 @@ a.navbar-brand {
     color: #FF8C00;
 }
 
+/* Blog and forum page */
+
+h2 > a {
+    color: #663300;
+}
+
+h2 > a:focus,
+h2 > a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.post-container {
+    border-bottom: #663300 solid 2px;
+}
+
 @media (max-width: 575px) {
     .main-image {
         max-width: 600px;
@@ -87,6 +111,9 @@ a.navbar-brand {
     .main-image {
         max-width: 800px;
         height: 500px;
+    }
+    .form-control {
+        width: 60%;
     }
 }
 

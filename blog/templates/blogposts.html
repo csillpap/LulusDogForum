@@ -1,8 +1,11 @@
 {% extends "blog.html" %}
 {% block blogcontent %}
     {% for post in posts %}
-        <div>
-            <h2><a href="">{{ post.title }}</a></h2>
+        <div class="post-container">
+            <h2><a href="{{ post.id }}">{{ post.title }}</a></h2>
+            {% if post.image %}
+                <img src="/media/{{ post.image}}" width="200">
+            {% endif %}
             <p>{{ post.content|truncatewords:50 }}</p>
             <p><button class="btn btn-default" onclick="location.href={{ post.id }}">Read More</button></p>
             <p>{{ post.published_date }}</p>
