@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Thanks for buying my item :)</h1>
- 
-    <h2>POST</h2>
-    {{ post }}
- 
-    <h2>GET</h2>
-    {{ get }}
 
-    <button><a href="{% url 'products_list' %}">Back to products</a></button>
+    <div class="container">
+
+        <h1>Thanks for buying my item :)</h1>
+
+        <button class="btn btn-default"><a href="{% url 'products_list' %}">Back to products</a></button>
+
+    </div>
 
 {% endblock %}
