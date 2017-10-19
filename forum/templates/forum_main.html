@@ -2,9 +2,16 @@
 {% load thread_extras %}
 {% block forumcontent %}
    {% load bootstrap_tags %}
+        <div><button class="btn btn-default"><a href="{% url 'forum_subjects' %}">Search threads by subject</a></button></div>
        {% for thread in threads %}
-           {% include "thread_item.html" %}
-           <h3>{{ thread.subject }}</h3>
+       {% include "thread_item.html" %}
+           <div class="post-container">
+               {% for post in thread.posts.all %}
+                   <p>{{ post.comment|truncatewords:30 }}</p>
+               {% endfor %}
+               <p>Subject: {{ thread.subject }}</p>
+               <p>Created by {{ thread.user }}</p>
+               <p>{{ thread.created_at }}</p>
+           </div>
        {% endfor %}
-       <div><h4><a href="{% url 'forum_subjects' %}">Search threads by subject</a></h4></div>
 {% endblock %}

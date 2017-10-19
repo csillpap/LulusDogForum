@@ -4,7 +4,7 @@ from views import forum, forum_subjects, subject_threads, new_thread, thread, ne
 urlpatterns = [
     url(r'^main$', forum, name='forum_main'),
     url(r'^subjects$', forum_subjects, name='forum_subjects'),
-    url(r'^threads/(?P<subject_id>\d+)/$', subject_threads, name='threads'),
+    url(r'^subjects/(?P<subject_id>\d+)/$', subject_threads, name='threads'),
     url(r'^new_thread/(?P<subject_id>\d+)/$', new_thread, name='new_thread'),
     url(r'^thread/(?P<thread_id>\d+)/$', thread, name='thread'),
     url(r'^post/new/(?P<thread_id>\d+)/$', new_post, name='new_post'),

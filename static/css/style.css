@@ -60,12 +60,25 @@ a.navbar-brand {
     border-color: #FF8C00;
 }
 
+.btn-default:active:hover,
 .btn-default:focus,
 .btn-default:hover,
+.btn-primary:active:hover,
 .btn-primary:focus,
 .btn-primary:hover {
     background-color: #FF8C00;
     border-color: #663300;
+}
+
+.btn.btn-default > a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn.btn-default > a:focus,
+.btn.btn-default > a {
+    color: white;
+    text-decoration: none;
 }
 
 /* Home page */
@@ -95,6 +108,8 @@ h2 > a {
     color: #663300;
 }
 
+
+
 h2 > a:focus,
 h2 > a:hover {
     color: white;
@@ -103,6 +118,19 @@ h2 > a:hover {
 
 .post-container {
     border-bottom: #663300 solid 2px;
+}
+
+.comment {
+    border-bottom: #663300 solid 2px;
+    padding: 5px;
+}
+
+.comment-name {
+    font-size: 20px;
+}
+
+#subject-title {
+    font-weight: bold;
 }
 
 /* Products */
