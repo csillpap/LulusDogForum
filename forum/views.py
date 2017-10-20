@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404, redirect
 from models import Subject, Thread, Post
-from django.contrib import messages, auth
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
@@ -23,7 +23,7 @@ def subject_threads(request, subject_id):
     return render(request, 'threads.html', {'subject': subject})
 
 
-@login_required
+@login_required(login_url='/account/login/')
 def new_thread(request, subject_id):
     subject = get_object_or_404(Subject, pk=subject_id)
     if request.method == "POST":
@@ -64,7 +64,7 @@ def thread(request, thread_id):
     return render(request, 'thread.html', args)
 
 
-@login_required
+@login_required(login_url='/account/login/')
 def new_post(request, thread_id):
     thread = get_object_or_404(Thread, pk=thread_id)
 
