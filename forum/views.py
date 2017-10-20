@@ -8,10 +8,14 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 from forms import ThreadForm, PostForm
+from django.utils import timezone
 
 
 def forum(request):
-    return render(request, 'forum_main.html', {'threads': Thread.objects.all()})
+    # return the list of threads in descending order
+    threads = Thread.objects.filter(created_at__lte=timezone.now()
+                                ).order_by('-created_at')
+    return render(request, "forum_main.html", {'threads': threads})
 
 
 def forum_subjects(request):

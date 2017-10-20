@@ -3,15 +3,22 @@
 
 {% block forumcontent %}
 
-<h2><strong>{{ subject.name }}</strong></h2>
+<div class="jumbotron subject-title">
+    <h1>{{ subject.name }}</h1>
+</div>
 
 <div class="col-md-12">
     <p>
         <a href="{% url 'new_thread' subject.id %}" class="btn btn-primary">New Thread</a>
     </p>
-    {% for thread in subject.threads.all %}
-        {% include "thread_item.html" %}
-    {% endfor %}
+    <div class="post-container">
+        {% for thread in subject.threads.all %}
+            {% include "thread_item.html" %}
+            {% for post in thread.posts.all %}
+                <p>{{ post.comment|striptags|truncatewords:20 }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}

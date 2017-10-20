@@ -7,10 +7,10 @@
        {% include "thread_item.html" %}
            <div class="post-container">
                {% for post in thread.posts.all %}
-                   <p>{{ post.comment|truncatewords:30 }}</p>
+                   <p>{{ post.comment|striptags|truncatewords:20 }}</p>
                {% endfor %}
-               <p>Subject: {{ thread.subject }}</p>
-               <p>Created by {{ thread.user }}</p>
+               <p><strong>Subject:</strong> {{ thread.subject }}</p>
+               <p><strong>Created by</strong> {{ thread.user }}</p>
                <p>{{ thread.created_at }}</p>
            </div>
        {% endfor %}

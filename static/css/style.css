@@ -140,8 +140,10 @@ h2 > a:hover {
     font-size: 20px;
 }
 
-#subject-title {
-    font-weight: bold;
+.subject-title {
+    margin-bottom: 30px;
+    background-color: #FFDEAD;
+    padding: 0;
 }
 
 /* Products */

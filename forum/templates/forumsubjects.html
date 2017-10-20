@@ -3,7 +3,7 @@
 {% block forumcontent %}
    {% load bootstrap_tags %}
    {% for subject in subjects %}
-       <section class="subject">
+       <section class="post-container">
            <h2><a href="{% url "threads" subject.id %}">{{ subject.name }}</a></h2>
            <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
            <p>THREADS: {{ subject.threads.count }}</p>
