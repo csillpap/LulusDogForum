@@ -17,6 +17,10 @@ p {
     font-family: "PT Sans";
 }
 
+.short-page {
+    margin-bottom: 300px;
+}
+
 /* Navbar */
 
 .navbar {
@@ -86,6 +90,10 @@ a.navbar-brand {
     text-decoration: none;
 }
 
+.back-button {
+    float: right;
+}
+
 .alert-success {
     color: black;
     background-color: #FF8C00;
@@ -106,12 +114,6 @@ a.navbar-brand {
 
 .main-image-text {
     color: #FF8C00;
-}
-
-/* Contact page */
-
-.contact-page {
-    margin-bottom: 300px;
 }
 
 /* Blog and forum page */
@@ -169,7 +171,8 @@ tr {
 
 footer {
 	text-align: center;
-    margin-top: 30px;
+    margin-top: 100px;
+    border-top: #663300 solid 1px;
 }
 
 footer > a > i.fa.fa-facebook-square,
@@ -219,8 +222,13 @@ footer > p {
     .text-container {
         margin-top: 100px;
     }
+    .short-page {
+        margin-bottom: 500px;
+    }
 }
 
 @media (min-width: 1200px) {
-
+    .short-page {
+        margin-bottom: 700px;
+    }
 }

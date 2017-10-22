@@ -25,9 +25,9 @@
                     </tbody>
                 </table>
             </div>
-            <p>
-                <a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New post</a>
-            </p>
+            <a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New post</a>
+            <a href="{% url 'forum_main' %}" class="btn btn-primary back-button">Go back to threads</a>
+
     </div>
 </div>
 <div class="container">

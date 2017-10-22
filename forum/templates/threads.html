@@ -8,9 +8,10 @@
 </div>
 
 <div class="col-md-12">
-    <p>
-        <a href="{% url 'new_thread' subject.id %}" class="btn btn-primary">New Thread</a>
-    </p>
+
+    <a href="{% url 'new_thread' subject.id %}" class="btn btn-primary">New Thread</a>
+
+    <a href="{% url 'forum_subjects' %}" class="btn btn-primary back-button">Go back to subjects</a>
     <div class="post-container">
         {% for thread in subject.threads.all %}
             {% include "thread_item.html" %}
