@@ -108,6 +108,12 @@ a.navbar-brand {
     color: #FF8C00;
 }
 
+/* Contact page */
+
+.contact-page {
+    margin-bottom: 300px;
+}
+
 /* Blog and forum page */
 
 .page-title {
@@ -162,6 +168,25 @@ tr {
     background-color: #FFFACD;
     border-bottom: #663300 solid 2px
 }
+
+/* Footer */
+
+footer {
+	text-align: center;
+    margin-top: 30px;
+}
+
+footer > a > i.fa.fa-facebook-square,
+footer > a > i.fa.fa-twitter-square,
+footer > a > i.fa.fa-github {
+	color: black;
+}
+
+footer > p {
+    font-size: 10px;
+}
+
+/* Media queries */
 
 @media (max-width: 575px) {
     .main-image {
