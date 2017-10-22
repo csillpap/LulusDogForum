@@ -164,10 +164,6 @@ tr {
     border-bottom: #663300 solid 2px
 }
 
-.table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #FFFACD;
-    border-bottom: #663300 solid 2px
-}
 
 /* Footer */
 
