@@ -25,6 +25,8 @@ from paypal_store.views import paypal_return, paypal_cancel
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home_views.get_homepage, name='home'),
+    url(r'^about/$', home_views.get_aboutpage, name='about'),
+    url(r'^contact/$', home_views.get_contactpage, name='contact'),
     url(r'^account/', include('accounts.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}), # media urls for the blog images
