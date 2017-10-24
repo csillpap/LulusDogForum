@@ -35,3 +35,10 @@ A fictional website for dogs where they can talk to other dogs on the forum, rea
 
 Different unittests were conducted using Django's testing framework. The unittests can be found in each app's tests.py file. The single payment function was tested by using the Paypal Test account created at https://developer.paypal.com/
 
+## Acknowledgements
+
+Source of the images on the home page: https://pixabay.com/
+
+
+
+
