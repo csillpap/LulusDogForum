@@ -228,10 +228,19 @@ footer > p {
     .short-page {
         margin-bottom: 500px;
     }
+    .main-image {
+        max-width: 1400px;
+        height: 800px;
+    }
 }
 
 @media (min-width: 1200px) {
     .short-page {
         margin-bottom: 700px;
     }
+    .main-image {
+        max-width: 1600px;
+        height: 900px;
+    }
+
 }
