@@ -15,6 +15,7 @@ h1 {
 
 p {
     font-family: "PT Sans";
+    font-size: 16px;
 }
 
 .short-page {
@@ -45,6 +46,14 @@ a.navbar-brand {
     margin-right: 0;
     margin-left: 0;
     width: 100%;
+}
+
+.button.navbar-toggle.collapsed {
+    background-color: #EFB168;
+}
+
+span.icon-bar {
+    background-color: #FF8C00;
 }
 
 /* Forms and buttons */
