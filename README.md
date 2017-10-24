@@ -1,8 +1,12 @@
-# Dog Talk App
+# Lulu's Dog Forum App
+
+https://lulus-dog-forum.herokuapp.com/
+
+![Screenshot](screenshot.png)
 
 ## Overview
 
-A fictional website for dogs where they can talk to other dogs on the forum, read the blog of Loulou, or purchase dog related products
+A fictional website for dogs where they can talk to other dogs on the forum, read the blog of Lulu, or purchase dog related products
 
 ## Features
 
